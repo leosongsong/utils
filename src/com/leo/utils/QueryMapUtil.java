@@ -162,7 +162,7 @@ public class QueryMapUtil {
 			}
 		}
 		
-		System.out.println("====================");
+		System.out.println("=========================");
 		
 		Map<String, String> mapSimple = parseQuerySimple("aa=11&aa=2222222");
 		for (Entry<String, String> elem : mapSimple.entrySet()) {
