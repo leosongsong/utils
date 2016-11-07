@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
  
 /**
+ * 
  * This class encapsulates methods for requesting a server via HTTP GET/POST and
  * provides methods for parsing response from the server.
  */
