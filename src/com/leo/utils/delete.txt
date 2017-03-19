@@ -1,0 +1,130 @@
+============================================================
+============================================================
+IP:
+http://121.50.18.76
+
+로그인
+test2015070 / testcrm
+============================================================
+============================================================
+
+
+
+
+공통사항[로깅처리, 메시지처리]=================================================================
+■로깅처리
+Logback vs Devon Logging Laptime 을 비교
+log.debug("xxxxxxxxxxxxxxx : " + "zzzzzzzzzzzzzzzzzz") 만건처리소요시간
+only console logging
+Logback style은 시간정보 > 클래스 정보> 로그레벨 > 해당함수명 > 라인정보 까지 찍는 구조로 설정 : 1000 ms
+Devon   style은 주어진 문자열만 찍는 구조?		 										  : 500 ms
+성능상은 devon 우세함 ???
+
+03/14=======================================================================================
+MSG_OD_WARN_MINPAYMENT
+
+03/13=======================================================================================
+PC, Mobile > OrderBiz.java > makeOrderData method > 
+ ret.setString("msgCode", 어떤것은 code, 어떤것은 문자열) 로 혼제 되어 있음. => code를 모두 문자열로 변경 필요함.
+ makeOrderData method Caller에서 
+ 조건에 따라
+ req.setAttribute("msg", 문자열
+ 또는 
+ req.setAttribute("msg", retExec.getString("msgCode")
+ 
+ 
+ R7401 은 소스상 문제는 없음.
+ 어떤 에러가 발생하는가? 에러정보 필요함
+
+
+03/10=======================================================================================
+■ 엑셀 : 16, 110, 182 행
+
+PC, MOBILE
+renewalEvent1.jsp
+		41 행
+        if ( !getByteToString(f.memo.value)){
+	       	alert("<pbf:msg>MSG_MP_WARN_INPUTMAXLENGTH;축하글 등록 </pbf:msg>");
+			f.memo.focus();
+            return false;
+        }
+
+		=>
+		삭제
+
+03/09======================================================================================= 
+■ 엑셀 : 71 행
+pwSearchCmd.java
+line : 290
+			    			/**
+			    			 * 2017.03.09 이준호 수정
+			    			 *showEmail = e_mail.substring(0, 3); 
+			    			 */
+			    			showEmail = StringUtils.substring(e_mail, 0, 3);
+
+03/08=======================================================================================
+■ 엑셀 : 13 행
+initMyInfoSubMenuCmd.java
+	LNavigationAlter.setReturnUrlName(req, LOGIN_FORM_PAGE); 
+	=>
+	LNavigationAlter.setReturnUrlName(req, "login");
+
+mypage_navi.xml
+    <action-name name="eretail.mypage.myInfoSubMenu">
+    	<command>eretail.mypage.cmd.initMyInfoSubMenuCmd</command>
+        <return-url>/jsp/mypage/myInfoSubMenu.jsp</return-url>
+    </action-name> 
+    =>
+    <action-name name="eretail.mypage.myInfoSubMenu">
+    	<command>eretail.mypage.cmd.initMyInfoSubMenuCmd</command>
+        <return-url>/jsp/mypage/myInfoSubMenu.jsp</return-url>
+        <return-url name="login">eretail.login.initLogin.dev</return-url>
+    </action-name> 
+
+
+03/09=======================================================================================
+03/10=======================================================================================
+============================================================================================
+
+e.notify : 없애야 할 듯.
+		   process를 끝내는 기능. loop 안에서 예외처리를 하더라도
+
+View FCM statistics :
+
+why hang :		   
+		   
+
+push 서비스 장애 분석
+원인: gcm서버(google cloud messaging 서버)가 순간 접속이 안되어 타임아웃이 나서 hang 이 발생 할 수 있음.
+	 즉 네트웍 상태도 영향이 있을 수 있음.	
+	 	 
+대안: com.google.android.gcm.server.Sender 클래스의 기능으로는 위 문제를 해결 할 수는 없음.
+	 즉 Sender API 에는 특별한 기능을 제공하지는 않음.
+	  
+	 궁극적이 방안은 아니지만 현재 소스에 개선 할 수있는 방안으로는
+	 db 처리 하는 부분과 sender 처리 하는 부분을 별도 처리 하며
+	 sender 부분을 비동기로 처리하고 비동기 처기가 완료되면 해당 결과를 db 처리 하는 방법이 있을 수 있습니다. 
+
+============================================================================================
+★cardInfoSet.jsp
+세미클론 추가
+var f = document.if_frmINIpay => var f = document.if_frmINIpay;
+
+
+★orderSheet.jsp
+
+<%-- 배송지가 이전배송지로 세팅될 경우, 배송지 초기화 세팅 --%>
+<c:if test="${delvTypeIdx eq '2' and delvYn eq 'N'}">
+	setShipInfo(2);
+</c:if>
+
+해당 iframe이 로딩 되었을때 setShipInfo 함수가 호출되게=================>
+
+$(function(){
+	$("#setInfoId").on("load", function(){
+		<%-- 배송지가 이전배송지로 세팅될 경우, 배송지 초기화 세팅 --%>
+		<c:if test="${delvTypeIdx eq '2' and delvYn eq 'N'}">
+			setShipInfo(2);
+		</c:if>
+	});
+});
