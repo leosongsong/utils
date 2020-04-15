@@ -41,4 +41,10 @@ xxxxxxxxxxx
 
 
 hhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggg
+<<<<<<< HEAD
 ggggggggggggggggggggggggggggggggggggg
+=======
+ggggggggggggggggggggggggggggggggggggg
+222222222222222222
+444444444444444444444
+>>>>>>> refs/remotes/origin/branch_02
