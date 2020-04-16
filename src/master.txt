@@ -1,36 +1,6 @@
 
 
-33333333333333333
-
-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
-rrrrrrrrrrrrrrrrrrrrrrrrrrxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxsss
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-44444444444
 
 
 
-5555555555555
-
-
-66666666666666666666666
-
-77777777777777777777777777777777
-
-xxxxxxxxxxxxxxx
-8888888888888
-
-999999999777777777777777777777777777777777777888888899999999xxxxxxxxxxxxxxzzzzzzzzzzz
-
-hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-<<<<<<< HEAD
-=======
-
-1111111
-<<<<<<< HEAD
-33333333333333333333
->>>>>>> refs/remotes/origin/branch_02
-=======
-33333333333333333333
-666666666
->>>>>>> refs/heads/branch_02
+2222222222222222222222222222222222
