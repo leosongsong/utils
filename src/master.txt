@@ -27,5 +27,10 @@ hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 =======
 
 1111111
+<<<<<<< HEAD
 33333333333333333333
 >>>>>>> refs/remotes/origin/branch_02
+=======
+33333333333333333333
+666666666
+>>>>>>> refs/heads/branch_02
